@@ -4,4 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :confirmable, :rememberable, 
          :trackable, :validatable
+
+  has_one :payment
+  accepts_nested_attributes_for :payment
 end
